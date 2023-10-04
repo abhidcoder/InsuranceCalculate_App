@@ -112,7 +112,7 @@ def scheme_logic(all_age_range, city_tier, num_adults, num_children, sum_insured
     for value in found_scheme:
         for i in range(len(premium_value)):
             
-            if  sum_insured == premium_value[i] and city_tier == "tier-1":
+            if  sum_insured == premium_value[i] and city_tier in value:
                 if "discount" in value:
                     cal=float(value[i+3])//2
                     discounted_amt=float(value[i+3])-float(value[i+3])//2
@@ -121,7 +121,7 @@ def scheme_logic(all_age_range, city_tier, num_adults, num_children, sum_insured
                 else:
                     all_result.append((value[i+3],str(value[-1])))
 
-            elif  sum_insured == premium_value[i] and city_tier == "tier-2":
+            elif  sum_insured == premium_value[i] and city_tier in value:
                 if "discount" in value:
                     cal=float(value[i+3])//2
                     discounted_amt=float(value[i+3])-float(value[i+3])//2
